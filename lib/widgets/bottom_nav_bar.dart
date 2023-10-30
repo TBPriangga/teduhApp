@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teduh_app/screen/home_screen.dart';
 import 'package:teduh_app/screen/note/home_note_screen.dart';
+import 'package:teduh_app/screen/renungan/renungan_screen.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
@@ -33,7 +34,7 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
             icon: IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, HomeScreen.routeName);
+                Navigator.pushNamed(context, renunganScreen.routeName);
               },
               icon: const Icon(Icons.book),
             ),
