@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
+// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables, avoid_unnecessary_containers, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:teduh_app/model/video_list.dart';

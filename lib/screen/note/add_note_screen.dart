@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:teduh_app/db/database_provider.dart';
 
@@ -52,13 +54,15 @@ class _AddNoteState extends State<AddNote> {
       DatabaseProvider.db.addNewNote(note);
       print("Note added successfully");
     }
-    Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+    Navigator.pushNamedAndRemoveUntil(
+        context, "/notehomescreen", (route) => false);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Text(widget.note != null ? "Edit note" : "Add new note"),
       ),
       body: Padding(

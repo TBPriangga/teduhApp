@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teduh_app/screen/openai/home_openai_screen.dart';
 import 'package:teduh_app/screen/renungan/audio_screen.dart';
 import 'package:teduh_app/screen/renungan/bacaan_screen.dart';
 import 'package:teduh_app/screen/renungan/renungan_screen.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         bacaanScreen.routeName: (context) => const bacaanScreen(),
         audioScreen.routeName: (context) => const audioScreen(),
         HomeYoutubeScreen.routeName: (context) => const HomeYoutubeScreen(),
+        HomeOpenAiScreen.routeName: (context) => const HomeOpenAiScreen(),
       },
     );
   }

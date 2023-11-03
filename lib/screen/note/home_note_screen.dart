@@ -1,4 +1,8 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
+import 'package:teduh_app/screen/note/add_note_screen.dart';
+import 'package:teduh_app/screen/note/display_note_screen.dart';
 
 import '../../db/database_provider.dart';
 import '../../model/note_model.dart';
@@ -22,7 +26,10 @@ class _noteHomeScreenState extends State<noteHomeScreen> {
 
   void _addNote() async {
     // Navigate to the note creation screen
-    await Navigator.pushNamed(context, "/AddNote");
+    await Navigator.pushNamed(
+      context,
+      AddNote.routeName,
+    );
     setState(() {});
     await getNotes();
   }
@@ -31,8 +38,8 @@ class _noteHomeScreenState extends State<noteHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Your Notes"),
-        actions: const [],
+        title: const Text("Notes"),
+        backgroundColor: Colors.blueGrey,
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: getNotes(),
@@ -66,7 +73,7 @@ class _noteHomeScreenState extends State<noteHomeScreen> {
                         return Card(
                           child: ListTile(
                             onTap: () {
-                              Navigator.pushNamed(context, "/ShowNote",
+                              Navigator.pushNamed(context, ShowNote.routeName,
                                   arguments: NoteModel(
                                       id: id,
                                       title: title,

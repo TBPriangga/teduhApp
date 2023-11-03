@@ -7,7 +7,7 @@ import 'add_note_screen.dart';
 class ShowNote extends StatelessWidget {
   const ShowNote({Key? key}) : super(key: key);
 
-  static const routeName = '/shownote';
+  static const routeName = '/ShowNote';
   @override
   Widget build(BuildContext context) {
     final NoteModel note =
@@ -15,7 +15,7 @@ class ShowNote extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Your Note"),
+        backgroundColor: Colors.blueGrey,
         actions: [
           IconButton(
             icon: const Icon(Icons.edit),
@@ -34,7 +34,8 @@ class ShowNote extends StatelessWidget {
             icon: const Icon(Icons.delete),
             onPressed: () {
               DatabaseProvider.db.deleteNote(note.id);
-              Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+              Navigator.pushNamedAndRemoveUntil(
+                  context, "/notehomescreen", (route) => false);
             },
           ),
         ],

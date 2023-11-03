@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teduh_app/screen/home_screen.dart';
 import 'package:teduh_app/screen/note/home_note_screen.dart';
+import 'package:teduh_app/screen/openai/home_openai_screen.dart';
 import 'package:teduh_app/screen/renungan/renungan_screen.dart';
 import 'package:teduh_app/screen/youtube/home_youtube_screen.dart';
 
@@ -23,7 +24,7 @@ class BottomNavBar extends StatelessWidget {
       items: [
         BottomNavigationBarItem(
           icon: Container(
-            margin: const EdgeInsets.only(left: 50),
+            margin: const EdgeInsets.only(left: 20),
             child: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, HomeScreen.routeName);
@@ -52,8 +53,17 @@ class BottomNavBar extends StatelessWidget {
           label: "Youtube",
         ),
         BottomNavigationBarItem(
+          icon: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, HomeOpenAiScreen.routeName);
+            },
+            icon: const Icon(Icons.chat),
+          ),
+          label: "OpenAI",
+        ),
+        BottomNavigationBarItem(
           icon: Container(
-            margin: const EdgeInsets.only(right: 50),
+            margin: const EdgeInsets.only(right: 20),
             child: IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, noteHomeScreen.routeName);
