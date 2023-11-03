@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
+// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables, prefer_const_constructors, unused_element
 
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
@@ -156,7 +156,7 @@ class _BackgroundFilter extends StatelessWidget {
               Colors.white.withOpacity(0.5),
               Colors.white.withOpacity(0.0)
             ],
-            stops: [
+            stops: const [
               0.0,
               0.4,
               0.6
@@ -169,8 +169,8 @@ class _BackgroundFilter extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.deepPurple.shade800,
-              Colors.deepPurple.shade200,
+              Colors.blueGrey.shade800,
+              Colors.blueGrey.shade200,
             ],
           ),
         ),

@@ -1,9 +1,8 @@
-// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
+// ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables, unused_element
 
 import 'package:flutter/material.dart';
 import 'package:teduh_app/screen/renungan/audio_screen.dart';
 import 'package:teduh_app/screen/renungan/bacaan_screen.dart';
-import 'package:teduh_app/widgets/bottom_nav_bar.dart';
 import 'package:teduh_app/widgets/image_network_container.dart';
 
 import '../../model/audio_model.dart';
@@ -39,7 +38,6 @@ class _renunganScreenState extends State<renunganScreen> {
               ),
             ),
           ),
-          bottomNavigationBar: const BottomNavBar(index: 1),
           body: ListView(
             padding: const EdgeInsets.all(20.0),
             children: [

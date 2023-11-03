@@ -56,4 +56,16 @@ class DatabaseProvider {
     final db = await database;
     return await db!.delete("notes", where: "id = ?", whereArgs: [id]);
   }
+
+  // Membuat function untuk mengedit note
+  Future<int> updateNote(NoteModel note) async {
+    final db = await database;
+    return await db?.update(
+          'notes',
+          note.toMap(),
+          where: "id = ?",
+          whereArgs: [note.id],
+        ) ??
+        0;
+  }
 }
