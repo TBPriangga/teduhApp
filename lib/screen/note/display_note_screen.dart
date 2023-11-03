@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teduh_app/model/note_model.dart';
 
-import '../../db/database_provider.dart';
+import '../../db/database.dart';
 import 'add_note_screen.dart';
 
 class ShowNote extends StatelessWidget {
@@ -33,7 +33,7 @@ class ShowNote extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.delete),
             onPressed: () {
-              DatabaseProvider.db.deleteNote(note.id);
+              dbDatabase.db.deleteNote(note.id);
               Navigator.pushNamedAndRemoveUntil(
                   context, "/notehomescreen", (route) => false);
             },

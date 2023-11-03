@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:teduh_app/db/database_provider.dart';
+import 'package:teduh_app/db/database.dart';
 
 import '../../model/note_model.dart';
 
@@ -48,10 +48,10 @@ class _AddNoteState extends State<AddNote> {
       creation_date: widget.note?.creation_date ?? date,
     );
     if (widget.note != null) {
-      DatabaseProvider.db.updateNote(note);
+      dbDatabase.db.updateNote(note);
       print("Note updated successfully");
     } else {
-      DatabaseProvider.db.addNewNote(note);
+      dbDatabase.db.addNewNote(note);
       print("Note added successfully");
     }
     Navigator.pushNamedAndRemoveUntil(

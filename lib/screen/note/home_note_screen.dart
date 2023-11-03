@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:teduh_app/screen/note/add_note_screen.dart';
 import 'package:teduh_app/screen/note/display_note_screen.dart';
 
-import '../../db/database_provider.dart';
+import '../../db/database.dart';
 import '../../model/note_model.dart';
 
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
@@ -20,7 +20,7 @@ class noteHomeScreen extends StatefulWidget {
 class _noteHomeScreenState extends State<noteHomeScreen> {
   //getting all notes
   Future<List<Map<String, dynamic>>> getNotes() async {
-    final notes = await DatabaseProvider.db.getNotes();
+    final notes = await dbDatabase.db.getNotes();
     return notes;
   }
 
