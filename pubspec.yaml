@@ -44,6 +44,7 @@ dependencies:
   http: ^1.1.0
   cached_network_image: ^3.3.0
   envied: ^0.3.0+3
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:

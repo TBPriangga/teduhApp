@@ -1,7 +1,10 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables, use_build_context_synchronously, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../model/gptresponse_model.dart';
+import '../../provider/gptresponse_provider.dart';
 import '../../utils/openai_service.dart';
 import 'jawaban_openai_screen.dart';
 
@@ -34,9 +37,15 @@ class _HomeOpenAiScreenState extends State<HomeOpenAiScreen> {
             isLoading = false;
           });
 
+          // Update GptResponseModel using Provider
+          final gptResponseProvider =
+              Provider.of<GptResponseProvider>(context, listen: false);
+          gptResponseProvider
+              .setGptResponse(GptResponseModel(result.choices[0].text));
+
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) {
-              return JawabanOpenAIScreen(gptResponseData: result);
+              return const JawabanOpenAIScreen();
             },
           ));
         }

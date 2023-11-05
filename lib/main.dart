@@ -4,13 +4,22 @@ import 'package:teduh_app/screen/renungan/audio_screen.dart';
 import 'package:teduh_app/screen/renungan/bacaan_screen.dart';
 import 'package:teduh_app/screen/renungan/renungan_screen.dart';
 import 'package:teduh_app/screen/youtube/home_youtube_screen.dart';
+import 'provider/gptresponse_provider.dart';
 import 'screen/home_screen.dart';
 import 'screen/note/add_note_screen.dart';
 import 'screen/note/display_note_screen.dart';
 import 'screen/note/home_note_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => GptResponseProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
